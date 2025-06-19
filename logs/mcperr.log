@@ -1,0 +1,447 @@
+22:17:52 - !! Missing server jar file. Aborting !!
+22:24:04 - !! Can not find server sources, try decompiling !!
+14:30:51 - !! Can not find server sources, try decompiling !!
+11:48:46 - !! Can not find server sources, try decompiling !!
+16:22:43 - '"javac" -Xlint:-options -deprecation -g -source 1.8 -target 1.8 -classpath "jars/versions/1.8.8/1.8.8.jar:lib:lib/*:jars/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar:jars/libraries/org/lwjgl/lwjgl/lwjgl-platform/2.9.4-nightly-20150209/lwjgl-platform-2.9.4-nightly-20150209-natives-linux.jar:jars/libraries/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar:jars/libraries/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar:jars/libraries/org/apache/logging/log4j/log4j-api/2.0-beta9/log4j-api-2.0-beta9.jar:jars/libraries/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar:jars/libraries/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar:jars/libraries/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar:jars/libraries/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar:jars/libraries/com/google/guava/guava/17.0/guava-17.0.jar:jars/libraries/oshi-project/oshi-core/1.1/oshi-core-1.1.jar:jars/libraries/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar:jars/libraries/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar:jars/libraries/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar:jars/libraries/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar:jars/libraries/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar:jars/libraries/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar:jars/libraries/org/lwjgl/lwjgl/lwjgl_util/2.9.4-nightly-20150209/lwjgl_util-2.9.4-nightly-20150209.jar:jars/libraries/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:jars/libraries/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar:jars/libraries/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:jars/libraries/org/lwjgl/lwjgl/lwjgl/2.9.4-nightly-20150209/lwjgl-2.9.4-nightly-20150209.jar:jars/libraries/commons-io/commons-io/2.4/commons-io-2.4.jar:jars/libraries/com/mojang/realms/1.7.39/realms-1.7.39.jar:jars/libraries/com/mojang/authlib/1.5.21/authlib-1.5.21.jar:jars/libraries/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:jars/libraries/com/mojang/netty/1.8.8/netty-1.8.8.jar:jars/libraries/tv/twitch/twitch/6.5/twitch-6.5.jar:jars/libraries/com/paulscode/codecwav/20101023/codecwav-20101023.jar:jars/libraries/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-linux.jar:jars/libraries/org/apache/logging/log4j/log4j-core/2.0-beta9/log4j-core-2.0-beta9.jar:jars/libraries/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.jar" -sourcepath src/minecraft -d bin/minecraft @temp/java_src_client.txt' failed : 1
+16:22:43 - 
+16:22:43 - == ERRORS FOUND in JAVA CODE ==
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/SavedState.java:6: error: package javax.jnlp does not exist
+16:22:43 - import javax.jnlp.ServiceManager;
+16:22:43 -                  ^
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:12: error: package javax.jnlp does not exist
+16:22:43 - import javax.jnlp.BasicService;
+16:22:43 -                  ^
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:13: error: package javax.jnlp does not exist
+16:22:43 - import javax.jnlp.FileContents;
+16:22:43 -                  ^
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:14: error: package javax.jnlp does not exist
+16:22:43 - import javax.jnlp.PersistenceService;
+16:22:43 -                  ^
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:15: error: package javax.jnlp does not exist
+16:22:43 - import javax.jnlp.ServiceManager;
+16:22:43 -                  ^
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/SavedState.java:168: error: cannot find symbol
+16:22:43 - 			ServiceManager.lookup("javax.jnlp.PersistenceService");
+16:22:43 - 			^
+16:22:43 - 
+16:22:43 -   symbol:   variable ServiceManager
+16:22:43 -   location: class SavedState
+16:22:43 - src/minecraft/org/newdawn/slick/tests/KeyRepeatTest.java:33: warning: [deprecation] enableKeyRepeat(int,int) in Input has been deprecated
+16:22:43 - 		input.enableKeyRepeat(300,100);
+16:22:43 - 		     ^
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/tests/KeyRepeatTest.java:75: warning: [deprecation] enableKeyRepeat(int,int) in Input has been deprecated
+16:22:43 - 				input.enableKeyRepeat(300,100);
+16:22:43 - 				     ^
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/tests/TestUtils.java:135: warning: [deprecation] toURL() in File has been deprecated
+16:22:43 - 			oggStream = AudioLoader.getStreamingAudio("OGG", new File("testdata/bongos.ogg").toURL());
+16:22:43 - 			                                                                                ^
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/tests/TestUtils.java:139: warning: [deprecation] toURL() in File has been deprecated
+16:22:43 - 			modStream = AudioLoader.getStreamingAudio("MOD", new File("testdata/SMB-X.XM").toURL());
+16:22:43 - 			                                                                              ^
+16:22:43 - 
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:32: error: cannot find symbol
+16:22:43 - 		PersistenceService ps;
+16:22:43 - 		^
+16:22:43 - 
+16:22:43 -   symbol:   class PersistenceService
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:33: error: cannot find symbol
+16:22:43 - 		BasicService bs;
+16:22:43 - 		^
+16:22:43 - 
+16:22:43 -   symbol:   class BasicService
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:37: error: cannot find symbol
+16:22:43 - 			ps = (PersistenceService) ServiceManager
+16:22:43 - 			      ^
+16:22:43 - 
+16:22:43 -   symbol:   class PersistenceService
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:37: error: cannot find symbol
+16:22:43 - 			ps = (PersistenceService) ServiceManager
+16:22:43 - 			                          ^
+16:22:43 - 
+16:22:43 -   symbol:   variable ServiceManager
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:39: error: cannot find symbol
+16:22:43 - 			bs = (BasicService) ServiceManager
+16:22:43 - 			      ^
+16:22:43 - 
+16:22:43 -   symbol:   class BasicService
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:39: error: cannot find symbol
+16:22:43 - 			bs = (BasicService) ServiceManager
+16:22:43 - 			                    ^
+16:22:43 - 
+16:22:43 -   symbol:   variable ServiceManager
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:58: error: cannot find symbol
+16:22:43 - 			FileContents fc = ps.get(configURL);
+16:22:43 - 			^
+16:22:43 - 
+16:22:43 -   symbol:   class FileContents
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:95: error: cannot find symbol
+16:22:43 - 			PersistenceService ps = (PersistenceService) ServiceManager
+16:22:43 - 			^
+16:22:43 - 
+16:22:43 -   symbol:   class PersistenceService
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:95: error: cannot find symbol
+16:22:43 - 			PersistenceService ps = (PersistenceService) ServiceManager
+16:22:43 - 			                         ^
+16:22:43 - 
+16:22:43 -   symbol:   class PersistenceService
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:95: error: cannot find symbol
+16:22:43 - 			PersistenceService ps = (PersistenceService) ServiceManager
+16:22:43 - 			                                             ^
+16:22:43 - 
+16:22:43 -   symbol:   variable ServiceManager
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:97: error: cannot find symbol
+16:22:43 - 			BasicService bs = (BasicService) ServiceManager
+16:22:43 - 			^
+16:22:43 - 
+16:22:43 -   symbol:   class BasicService
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:97: error: cannot find symbol
+16:22:43 - 			BasicService bs = (BasicService) ServiceManager
+16:22:43 - 			                   ^
+16:22:43 - 
+16:22:43 -   symbol:   class BasicService
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:97: error: cannot find symbol
+16:22:43 - 			BasicService bs = (BasicService) ServiceManager
+16:22:43 - 			                                 ^
+16:22:43 - 
+16:22:43 -   symbol:   variable ServiceManager
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:101: error: cannot find symbol
+16:22:43 - 			FileContents fc = ps.get(configURL);
+16:22:43 - 			^
+16:22:43 - 
+16:22:43 -   symbol:   class FileContents
+16:22:43 -   location: class WebstartMuffin
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/gui/clickgui/components/ModuleButton.java:24: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		position[1] = dropdown.getY() + dropdown.getHeaderHeight() + ((buttonIndex) * (ArchLibman.instance.getFontRenderer().getFontSize() / 2)) + (1 * (buttonIndex));
+16:22:43 - 		                                                                                                  ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/gui/clickgui/components/Dropdown.java:52: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		this.fontSize = ArchLibman.instance.getFontRenderer().getFontSize() / 2;
+16:22:43 - 		                                   ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/command/commands/FontCommand.java:22: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		ArchLibman.instance.getFontRenderer().setFontSizeNormal(size);
+16:22:43 - 		                   ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/utils/Strings.java:138: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		return getStringWidthCFR(text, ArchLibman.instance.getFontRenderer().getFontSize());
+16:22:43 - 		                                                  ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/utils/Strings.java:148: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		return (int) ArchLibman.instance.getFontRenderer().getFont(fontSize).getStringWidth(stripColors(text));
+16:22:43 - 		                                ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/utils/Strings.java:152: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		return getStringHeightCFR(text, ArchLibman.instance.getFontRenderer().getFontSize());
+16:22:43 - 		                                                   ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/utils/Strings.java:156: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		return (int) ArchLibman.instance.getFontRenderer().getFont(fontSize).getStringHeight(stripColors(text));
+16:22:43 - 		                                ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/utils/RenderUtils.java:28: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		return ArchLibman.instance.getFontRenderer();
+16:22:43 - 		                          ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/gui/clickgui/GuiBind.java:67: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		int currentBoundTextFontSize = ArchLibman.instance.getFontRenderer().getFontSize() - 3;
+16:22:43 - 		                                                  ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/gui/clickgui/GuiBind.java:68: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		int escapeTextFontSize = ArchLibman.instance.getFontRenderer().getFontSize() - 8;
+16:22:43 - 		                                            ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/overlay/ToggledModules1.java:30: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		int offset = ArchLibman.instance.getFontRenderer().getFontSize() / 2 + relativeYOffset;
+16:22:43 - 		                                ^
+16:22:43 - 
+16:22:43 - src/minecraft/me/wavelength/ArchLibman/overlay/TabGui1.java:393: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:22:43 - 		int height = ArchLibman.instance.getFontRenderer().getFontSize() / 2 + 4;
+16:22:43 - 		                                ^
+16:22:43 - 
+16:22:43 - 20 errors
+16:22:43 - 16 warnings
+16:22:43 - ==================
+16:22:43 - 
+16:22:43 - !! Can not find server sources, try decompiling !!
+16:26:29 - '"javac" -Xlint:-options -deprecation -g -source 1.8 -target 1.8 -classpath "jars/versions/1.8.8/1.8.8.jar:lib:lib/*:jars/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar:jars/libraries/org/lwjgl/lwjgl/lwjgl-platform/2.9.4-nightly-20150209/lwjgl-platform-2.9.4-nightly-20150209-natives-linux.jar:jars/libraries/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar:jars/libraries/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar:jars/libraries/org/apache/logging/log4j/log4j-api/2.0-beta9/log4j-api-2.0-beta9.jar:jars/libraries/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar:jars/libraries/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar:jars/libraries/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar:jars/libraries/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar:jars/libraries/com/google/guava/guava/17.0/guava-17.0.jar:jars/libraries/oshi-project/oshi-core/1.1/oshi-core-1.1.jar:jars/libraries/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar:jars/libraries/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar:jars/libraries/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar:jars/libraries/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar:jars/libraries/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar:jars/libraries/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar:jars/libraries/org/lwjgl/lwjgl/lwjgl_util/2.9.4-nightly-20150209/lwjgl_util-2.9.4-nightly-20150209.jar:jars/libraries/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:jars/libraries/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar:jars/libraries/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:jars/libraries/org/lwjgl/lwjgl/lwjgl/2.9.4-nightly-20150209/lwjgl-2.9.4-nightly-20150209.jar:jars/libraries/commons-io/commons-io/2.4/commons-io-2.4.jar:jars/libraries/com/mojang/realms/1.7.39/realms-1.7.39.jar:jars/libraries/com/mojang/authlib/1.5.21/authlib-1.5.21.jar:jars/libraries/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:jars/libraries/com/mojang/netty/1.8.8/netty-1.8.8.jar:jars/libraries/tv/twitch/twitch/6.5/twitch-6.5.jar:jars/libraries/com/paulscode/codecwav/20101023/codecwav-20101023.jar:jars/libraries/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-linux.jar:jars/libraries/org/apache/logging/log4j/log4j-core/2.0-beta9/log4j-core-2.0-beta9.jar:jars/libraries/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.jar" -sourcepath src/minecraft -d bin/minecraft @temp/java_src_client.txt' failed : 1
+16:26:29 - 
+16:26:29 - == ERRORS FOUND in JAVA CODE ==
+16:26:29 - 
+16:26:29 - src/minecraft/org/newdawn/slick/SavedState.java:6: error: package javax.jnlp does not exist
+16:26:29 - import javax.jnlp.ServiceManager;
+16:26:29 -                  ^
+16:26:29 - 
+16:26:29 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:12: error: package javax.jnlp does not exist
+16:26:29 - import javax.jnlp.BasicService;
+16:26:29 -                  ^
+16:26:29 - 
+16:26:29 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:13: error: package javax.jnlp does not exist
+16:26:29 - import javax.jnlp.FileContents;
+16:26:29 -                  ^
+16:26:29 - 
+16:26:29 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:14: error: package javax.jnlp does not exist
+16:26:29 - import javax.jnlp.PersistenceService;
+16:26:29 -                  ^
+16:26:29 - 
+16:26:29 - src/minecraft/org/newdawn/slick/muffin/WebstartMuffin.java:15: error: package javax.jnlp does not exist
+16:26:29 - import javax.jnlp.ServiceManager;
+16:26:29 -                  ^
+16:26:29 - 
+16:26:29 - 5 errors
+16:26:29 - ==================
+16:26:29 - 
+16:26:29 - !! Can not find server sources, try decompiling !!
+16:29:00 - '"javac" -Xlint:-options -deprecation -g -source 1.8 -target 1.8 -classpath "jars/versions/1.8.8/1.8.8.jar:lib:lib/*:jars/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar:jars/libraries/org/lwjgl/lwjgl/lwjgl-platform/2.9.4-nightly-20150209/lwjgl-platform-2.9.4-nightly-20150209-natives-linux.jar:jars/libraries/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar:jars/libraries/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar:jars/libraries/org/apache/logging/log4j/log4j-api/2.0-beta9/log4j-api-2.0-beta9.jar:jars/libraries/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar:jars/libraries/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar:jars/libraries/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar:jars/libraries/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar:jars/libraries/com/google/guava/guava/17.0/guava-17.0.jar:jars/libraries/oshi-project/oshi-core/1.1/oshi-core-1.1.jar:jars/libraries/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar:jars/libraries/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar:jars/libraries/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar:jars/libraries/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar:jars/libraries/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar:jars/libraries/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar:jars/libraries/org/lwjgl/lwjgl/lwjgl_util/2.9.4-nightly-20150209/lwjgl_util-2.9.4-nightly-20150209.jar:jars/libraries/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:jars/libraries/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar:jars/libraries/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:jars/libraries/org/lwjgl/lwjgl/lwjgl/2.9.4-nightly-20150209/lwjgl-2.9.4-nightly-20150209.jar:jars/libraries/commons-io/commons-io/2.4/commons-io-2.4.jar:jars/libraries/com/mojang/realms/1.7.39/realms-1.7.39.jar:jars/libraries/com/mojang/authlib/1.5.21/authlib-1.5.21.jar:jars/libraries/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:jars/libraries/com/mojang/netty/1.8.8/netty-1.8.8.jar:jars/libraries/tv/twitch/twitch/6.5/twitch-6.5.jar:jars/libraries/com/paulscode/codecwav/20101023/codecwav-20101023.jar:jars/libraries/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-linux.jar:jars/libraries/org/apache/logging/log4j/log4j-core/2.0-beta9/log4j-core-2.0-beta9.jar:jars/libraries/io/netty/netty-all/4.0.23.Final/netty-all-4.0.23.Final.jar" -sourcepath src/minecraft -d bin/minecraft @temp/java_src_client.txt' failed : 1
+16:29:00 - 
+16:29:00 - == ERRORS FOUND in JAVA CODE ==
+16:29:00 - 
+16:29:00 - src/minecraft/ibxm/OpenALMODPlayer.java:53: error: cannot find symbol
+16:29:00 - 			AL.create();
+16:29:00 - 			  ^
+16:29:00 - 
+16:29:00 -   symbol:   method create()
+16:29:00 -   location: class AL
+16:29:00 - src/minecraft/org/newdawn/slick/AppGameContainer.java:492: error: destroy() is not public in AL; cannot be accessed from outside package
+16:29:00 - 		AL.destroy();
+16:29:00 - 		  ^
+16:29:00 - 
+16:29:00 - src/minecraft/org/newdawn/slick/openal/SoundStore.java:295: error: cannot find symbol
+16:29:00 - 					AL.create();
+16:29:00 - 					  ^
+16:29:00 - 
+16:29:00 -   symbol:   method create()
+16:29:00 -   location: class AL
+16:29:00 - src/minecraft/org/newdawn/slick/openal/SoundStore.java:349: error: cannot find symbol
+16:29:00 - 				AL10.alListener(AL10.AL_POSITION, listenerPos);
+16:29:00 - 				    ^
+16:29:00 - 
+16:29:00 -   symbol:   method alListener(int,FloatBuffer)
+16:29:00 -   location: class AL10
+16:29:00 - src/minecraft/org/newdawn/slick/openal/SoundStore.java:350: error: cannot find symbol
+16:29:00 - 				AL10.alListener(AL10.AL_VELOCITY, listenerVel);
+16:29:00 - 				    ^
+16:29:00 - 
+16:29:00 -   symbol:   method alListener(int,FloatBuffer)
+16:29:00 -   location: class AL10
+16:29:00 - src/minecraft/org/newdawn/slick/openal/SoundStore.java:351: error: cannot find symbol
+16:29:00 - 				AL10.alListener(AL10.AL_ORIENTATION, listenerOri);
+16:29:00 - 				    ^
+16:29:00 - 
+16:29:00 -   symbol:   method alListener(int,FloatBuffer)
+16:29:00 -   location: class AL10
+16:29:00 - src/minecraft/org/newdawn/slick/openal/SoundStore.java:419: error: cannot find symbol
+16:29:00 - 			    AL10.alSource(sources.get(nextSource), AL10.AL_POSITION, sourcePos);
+16:29:00 - 			        ^
+16:29:00 - 
+16:29:00 -   symbol:   method alSource(int,int,FloatBuffer)
+16:29:00 -   location: class AL10
+16:29:00 - src/minecraft/org/newdawn/slick/openal/SoundStore.java:420: error: cannot find symbol
+16:29:00 -     			AL10.alSource(sources.get(nextSource), AL10.AL_VELOCITY, sourceVel);
+16:29:00 -     			    ^
+16:29:00 - 
+16:29:00 -   symbol:   method alSource(int,int,FloatBuffer)
+16:29:00 -   location: class AL10
+16:29:00 - src/minecraft/org/newdawn/slick/tests/KeyRepeatTest.java:33: warning: [deprecation] enableKeyRepeat(int,int) in Input has been deprecated
+16:29:00 - 		input.enableKeyRepeat(300,100);
+16:29:00 - 		     ^
+16:29:00 - 
+16:29:00 - src/minecraft/org/newdawn/slick/tests/KeyRepeatTest.java:75: warning: [deprecation] enableKeyRepeat(int,int) in Input has been deprecated
+16:29:00 - 				input.enableKeyRepeat(300,100);
+16:29:00 - 				     ^
+16:29:00 - 
+16:29:00 - src/minecraft/org/newdawn/slick/tests/TestUtils.java:135: warning: [deprecation] toURL() in File has been deprecated
+16:29:00 - 			oggStream = AudioLoader.getStreamingAudio("OGG", new File("testdata/bongos.ogg").toURL());
+16:29:00 - 			                                                                                ^
+16:29:00 - 
+16:29:00 - src/minecraft/org/newdawn/slick/tests/TestUtils.java:139: warning: [deprecation] toURL() in File has been deprecated
+16:29:00 - 			modStream = AudioLoader.getStreamingAudio("MOD", new File("testdata/SMB-X.XM").toURL());
+16:29:00 - 			                                                                              ^
+16:29:00 - 
+16:29:00 - src/minecraft/net/minecraft/util/ResourceLocation.java:12: warning: [deprecation] <T>notNull(T) in Validate has been deprecated
+16:29:00 - 		Validate.notNull(this.resourcePath);
+16:29:00 - 		        ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>notNull(T)
+16:29:00 - src/minecraft/net/minecraft/util/RegistrySimple.java:30: warning: [deprecation] <T>notNull(T) in Validate has been deprecated
+16:29:00 - 		Validate.notNull(p_82595_1_);
+16:29:00 - 		        ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>notNull(T)
+16:29:00 - src/minecraft/net/minecraft/util/RegistrySimple.java:31: warning: [deprecation] <T>notNull(T) in Validate has been deprecated
+16:29:00 - 		Validate.notNull(p_82595_2_);
+16:29:00 - 		        ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>notNull(T)
+16:29:00 - src/minecraft/net/minecraft/util/RegistryNamespacedDefaultedByKey.java:30: warning: [deprecation] <T>notNull(T) in Validate has been deprecated
+16:29:00 - 		Validate.notNull(this.defaultValueKey);
+16:29:00 - 		        ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>notNull(T)
+16:29:00 - src/minecraft/net/minecraft/entity/EntityHanging.java:39: warning: [deprecation] <T>notNull(T) in Validate has been deprecated
+16:29:00 - 		Validate.notNull(facingDirectionIn);
+16:29:00 - 		        ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>notNull(T)
+16:29:00 - src/minecraft/net/minecraft/server/MinecraftServer.java:1280: warning: [deprecation] <T>notNull(T) in Validate has been deprecated
+16:29:00 - 		Validate.notNull(callable);
+16:29:00 - 		        ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>notNull(T)
+16:29:00 - src/minecraft/net/minecraft/server/MinecraftServer.java:1299: warning: [deprecation] <T>notNull(T) in Validate has been deprecated
+16:29:00 - 		Validate.notNull(runnableToSchedule);
+16:29:00 - 		        ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>notNull(T)
+16:29:00 - src/minecraft/net/minecraft/stats/StatisticsFile.java:46: warning: [deprecation] readFileToString(File) in FileUtils has been deprecated
+16:29:00 - 				this.statsData.putAll(this.parseJson(FileUtils.readFileToString(this.statsFile)));
+16:29:00 - 				                                              ^
+16:29:00 - 
+16:29:00 - src/minecraft/net/minecraft/stats/StatisticsFile.java:57: warning: [deprecation] writeStringToFile(File,String) in FileUtils has been deprecated
+16:29:00 - 			FileUtils.writeStringToFile(this.statsFile, dumpJson(this.statsData));
+16:29:00 - 			         ^
+16:29:00 - 
+16:29:00 - src/minecraft/net/minecraft/network/NetworkManager.java:198: warning: [deprecation] <T>add(T[],int,T) in ArrayUtils has been deprecated
+16:29:00 - 			this.dispatchPacket(packetIn, (GenericFutureListener[]) ArrayUtils.add(listeners, 0, listener));
+16:29:00 - 			                                                                  ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>add(T[],int,T)
+16:29:00 - src/minecraft/net/minecraft/network/NetworkManager.java:203: warning: [deprecation] <T>add(T[],int,T) in ArrayUtils has been deprecated
+16:29:00 - 				this.outboundPacketsQueue.add(new NetworkManager.InboundHandlerTuplePacketListener(packetIn, (GenericFutureListener[]) ArrayUtils.add(listeners, 0, listener)));
+16:29:00 - 				                                                                                                                                 ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>add(T[],int,T)
+16:29:00 - src/minecraft/net/minecraft/client/Minecraft.java:2743: warning: [deprecation] <T>notNull(T) in Validate has been deprecated
+16:29:00 - 		Validate.notNull(callableToSchedule);
+16:29:00 - 		        ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>notNull(T)
+16:29:00 - src/minecraft/net/minecraft/client/Minecraft.java:2762: warning: [deprecation] <T>notNull(T) in Validate has been deprecated
+16:29:00 - 		Validate.notNull(runnableToSchedule);
+16:29:00 - 		        ^
+16:29:00 - 
+16:29:00 -   where T is a type-variable:
+16:29:00 -     T extends Object declared in method <T>notNull(T)
+16:29:00 - src/minecraft/net/minecraft/client/gui/GuiMainMenu.java:99: warning: [deprecation] UTF_8 in Charsets has been deprecated
+16:29:00 - 			bufferedreader = new BufferedReader(new InputStreamReader(Minecraft.getMinecraft().getResourceManager().getResource(splashTexts).getInputStream(), Charsets.UTF_8));
+16:29:00 - 			                                                                                                                                                           ^
+16:29:00 - 
+16:29:00 - src/minecraft/net/minecraft/client/resources/Locale.java:88: warning: [deprecation] UTF_8 in Charsets has been deprecated
+16:29:00 - 		for (String s : IOUtils.readLines(p_135021_1_, Charsets.UTF_8)) {
+16:29:00 - 		                                                       ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/gui/clickgui/components/ModuleButton.java:24: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		position[1] = dropdown.getY() + dropdown.getHeaderHeight() + ((buttonIndex) * (ArchLibman.instance.getFontRenderer().getFontSize() / 2)) + (1 * (buttonIndex));
+16:29:00 - 		                                                                                                  ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/gui/clickgui/components/Dropdown.java:52: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		this.fontSize = ArchLibman.instance.getFontRenderer().getFontSize() / 2;
+16:29:00 - 		                                   ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/command/commands/FontCommand.java:22: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		ArchLibman.instance.getFontRenderer().setFontSizeNormal(size);
+16:29:00 - 		                   ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/utils/Strings.java:138: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		return getStringWidthCFR(text, ArchLibman.instance.getFontRenderer().getFontSize());
+16:29:00 - 		                                                  ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/utils/Strings.java:148: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		return (int) ArchLibman.instance.getFontRenderer().getFont(fontSize).getStringWidth(stripColors(text));
+16:29:00 - 		                                ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/utils/Strings.java:152: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		return getStringHeightCFR(text, ArchLibman.instance.getFontRenderer().getFontSize());
+16:29:00 - 		                                                   ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/utils/Strings.java:156: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		return (int) ArchLibman.instance.getFontRenderer().getFont(fontSize).getStringHeight(stripColors(text));
+16:29:00 - 		                                ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/utils/RenderUtils.java:28: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		return ArchLibman.instance.getFontRenderer();
+16:29:00 - 		                          ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/gui/clickgui/GuiBind.java:67: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		int currentBoundTextFontSize = ArchLibman.instance.getFontRenderer().getFontSize() - 3;
+16:29:00 - 		                                                  ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/gui/clickgui/GuiBind.java:68: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		int escapeTextFontSize = ArchLibman.instance.getFontRenderer().getFontSize() - 8;
+16:29:00 - 		                                            ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/overlay/ToggledModules1.java:30: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		int offset = ArchLibman.instance.getFontRenderer().getFontSize() / 2 + relativeYOffset;
+16:29:00 - 		                                ^
+16:29:00 - 
+16:29:00 - src/minecraft/me/wavelength/ArchLibman/overlay/TabGui1.java:393: warning: [deprecation] getFontRenderer() in ArchLibman has been deprecated
+16:29:00 - 		int height = ArchLibman.instance.getFontRenderer().getFontSize() / 2 + 4;
+16:29:00 - 		                                ^
+16:29:00 - 
+16:29:00 - src/minecraft/net/minecraft/util/HttpUtil.java:226: warning: [deprecation] toString(InputStream) in IOUtils has been deprecated
+16:29:00 - 								HttpUtil.logger.error(IOUtils.toString(inputstream1));
+16:29:00 - 								                             ^
+16:29:00 - 
+16:29:00 - src/minecraft/net/minecraft/util/StringTranslate.java:42: warning: [deprecation] UTF_8 in Charsets has been deprecated
+16:29:00 - 			for (String s : IOUtils.readLines(inputstream, Charsets.UTF_8)) {
+16:29:00 - 			                                                       ^
+16:29:00 - 
+16:29:00 - src/minecraft/net/minecraft/client/gui/GuiWinGame.java:95: warning: [deprecation] UTF_8 in Charsets has been deprecated
+16:29:00 - 				BufferedReader bufferedreader = new BufferedReader(new InputStreamReader(inputstream, Charsets.UTF_8));
+16:29:00 - 				                                                                                              ^
+16:29:00 - 
+16:29:00 - src/minecraft/net/minecraft/client/gui/GuiWinGame.java:119: warning: [deprecation] UTF_8 in Charsets has been deprecated
+16:29:00 - 				bufferedreader = new BufferedReader(new InputStreamReader(inputstream, Charsets.UTF_8));
+16:29:00 - 				                                                                               ^
+16:29:00 - 
+16:29:00 - src/minecraft/net/minecraft/client/renderer/OpenGlHelper.java:273: error: cannot find symbol
+16:29:00 - 			Processor[] aprocessor = (new SystemInfo()).getHardware().getProcessors();
+16:29:00 - 			                                                         ^
+16:29:00 - 
+16:29:00 -   symbol:   method getProcessors()
+16:29:00 -   location: interface HardwareAbstractionLayer
+16:29:00 - 9 errors
+16:29:00 - 35 warnings
+16:29:00 - ==================
+16:29:00 - 
+16:29:00 - !! Can not find server sources, try decompiling !!
+16:32:10 - !! Can not find server sources, try decompiling !!
+17:10:44 - !! Can not find server sources, try decompiling !!
+17:35:56 - !! Can not find server sources, try decompiling !!
+17:36:33 - "scalac" is not found on the PATH.  Scala files will not be recompiled
+15:31:15 - "scalac" is not found on the PATH.  Scala files will not be recompiled
+17:04:35 - !! Please don't run MCP as root !!
+17:04:40 - !! Please don't run MCP as root !!
+17:04:42 - !! Please don't run MCP as root !!
+17:05:04 - !! Please don't run MCP as root !!

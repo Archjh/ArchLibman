@@ -1,0 +1,60 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 4/7/25 3:56 PM
+Description: Initializing game
+
+java.lang.NullPointerException: Initializing game
+	at de.Hero.clickgui.elements.ModuleButton.<init>(ModuleButton.java:47)
+	at de.Hero.clickgui.ClickGUI$1.setup(ClickGUI.java:76)
+	at de.Hero.clickgui.Panel.<init>(Panel.java:46)
+	at de.Hero.clickgui.ClickGUI$1.<init>(ClickGUI.java:71)
+	at de.Hero.clickgui.ClickGUI.<init>(ClickGUI.java:71)
+	at de.Hero.example.ClientMain.setupClient(ClientMain.java:24)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:470)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:400)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at de.Hero.clickgui.elements.ModuleButton.<init>(ModuleButton.java:47)
+	at de.Hero.clickgui.ClickGUI$1.setup(ClickGUI.java:76)
+	at de.Hero.clickgui.Panel.<init>(Panel.java:46)
+	at de.Hero.clickgui.ClickGUI$1.<init>(ClickGUI.java:71)
+	at de.Hero.clickgui.ClickGUI.<init>(ClickGUI.java:71)
+	at de.Hero.example.ClientMain.setupClient(ClientMain.java:24)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:470)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.run(Minecraft.java:400)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Linux (amd64) version 6.13.8-arch1-1
+	CPU: <unknown>
+	Java Version: 1.8.0_442, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Azul Systems, Inc.
+	Memory: 195503688 bytes (186 MB) / 307757056 bytes (293 MB) up to 3670540288 bytes (3500 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: mcp
+	LWJGL: 2.9.4
+	OpenGL: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	GL Caps: 
+	Using VBOs: ~~ERROR~~ NullPointerException: null
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: ~~ERROR~~ NullPointerException: null
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>
