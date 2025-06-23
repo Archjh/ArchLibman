@@ -11,8 +11,8 @@
 		"homepage": "https://archjh.github.io/",
 		"sources": "https://github.com/Archjh/ArchLibman"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/caizm/icon.png",
+	"license": "GPL-3.0",
+	"icon": "assets/archlibman/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
