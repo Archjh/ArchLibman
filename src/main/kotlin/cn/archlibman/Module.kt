@@ -7,7 +7,7 @@ import java.util.concurrent.CopyOnWriteArrayList
 
 open class Module(var name: String,var description: String,var category: Category) {
 
-    var enabled = false
+    open var enabled = false
     val settings = CopyOnWriteArrayList<AbstractSetting<*>>()
     var key = -1
     open val mc = MinecraftClient.getInstance()

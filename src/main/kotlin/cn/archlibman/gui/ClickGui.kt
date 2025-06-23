@@ -5,10 +5,8 @@ import cn.archlibman.ModuleManager
 import cn.archlibman.ModuleManager.addModule
 import cn.archlibman.modules.ArmorHUD
 import cn.archlibman.modules.FPSDisplay
-import cn.archlibman.modules.FastPlace
 import cn.archlibman.modules.KeyStrokes
 import cn.archlibman.modules.NoClickDelay
-import cn.archlibman.modules.NoHurtCamera
 import cn.archlibman.modules.PotionHUD
 import cn.archlibman.modules.Sprint
 import cn.archlibman.modules.TargetHUD
@@ -55,8 +53,6 @@ class ClickGui : Screen(Text.of("ClickGui")) {
             KeyStrokes,
             TargetHUD,
             FPSDisplay,
-            NoHurtCamera,
-            FastPlace
             // 其他模块...
         )
 

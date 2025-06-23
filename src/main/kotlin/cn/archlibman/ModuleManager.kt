@@ -19,8 +19,7 @@ object ModuleManager {
         addModule(KeyStrokes)
         addModule(TargetHUD)
         addModule(FPSDisplay)
-        addModule(FastPlace)
-        addModule(NoHurtCamera)
+        addModule(NoHurtCam)
     }
 
     fun addModule(module: Module) {

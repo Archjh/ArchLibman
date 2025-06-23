@@ -6,6 +6,9 @@
     "cn/archlibman/mixin/KeyboardMixin": {
       "onKey": "Lnet/minecraft/class_309;method_1466(JIIII)V"
     },
+    "cn/archlibman/mixin/MixinGameRenderer": {
+      "tiltViewWhenHurt": "Lnet/minecraft/class_757;method_3198(Lnet/minecraft/class_4587;F)V"
+    },
     "cn/archlibman/mixin/MixinMinecraftClient": {
       "Lnet/minecraft/client/util/Window;setTitle(Ljava/lang/String;)V": "Lnet/minecraft/class_1041;method_24286(Ljava/lang/String;)V",
       "updateWindowTitle": "Lnet/minecraft/class_310;method_24288()V"
@@ -31,6 +34,9 @@
       },
       "cn/archlibman/mixin/KeyboardMixin": {
         "onKey": "Lnet/minecraft/class_309;method_1466(JIIII)V"
+      },
+      "cn/archlibman/mixin/MixinGameRenderer": {
+        "tiltViewWhenHurt": "Lnet/minecraft/class_757;method_3198(Lnet/minecraft/class_4587;F)V"
       },
       "cn/archlibman/mixin/MixinMinecraftClient": {
         "Lnet/minecraft/client/util/Window;setTitle(Ljava/lang/String;)V": "Lnet/minecraft/class_1041;method_24286(Ljava/lang/String;)V",

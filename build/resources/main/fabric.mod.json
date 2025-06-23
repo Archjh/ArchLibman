@@ -1,15 +1,15 @@
 {
 	"schemaVersion": 1,
-	"id": "caizm",
+	"id": "archlibman",
 	"version": "1.0.0",
-	"name": "CaizM",
+	"name": "archlibman",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"trollaura"
+		"archlibman"
 	],
 	"contact": {
-		"homepage": "https://shop.trollaura.top/",
-		"sources": "https://github.com/tRollaURa/Caizm"
+		"homepage": "https://archjh.github.io/",
+		"sources": "https://github.com/Archjh/ArchLibman"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/caizm/icon.png",
@@ -23,7 +23,7 @@
 		]
 	},
 	"mixins": [
-		"caizm.mixins.json"
+		"archlibman.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.5",
