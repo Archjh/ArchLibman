@@ -1,4 +1,0 @@
-empty,0
-empty,0
-empty,0
-Golden Helmet,100.0

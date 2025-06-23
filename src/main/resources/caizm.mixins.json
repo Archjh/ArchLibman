@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "cn.archlibman.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinPlayerEntity",
+    "TickMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "InGameHUDDraw",
+    "KeyboardMixin",
+    "MixinMinecraftClient",
+    "MixinNetworkHandler",
+    "MixinWindow"
+  ]
+}

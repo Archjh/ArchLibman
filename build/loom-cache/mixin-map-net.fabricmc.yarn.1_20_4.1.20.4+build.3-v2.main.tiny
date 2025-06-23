@@ -1,0 +1,2 @@
+v1	named	intermediary
+FIELD	cn/archlibman/mixin/MixinMinecraftClient	Lnet/minecraft/client/util/Window;	window	field_1704

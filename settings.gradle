@@ -1,0 +1,16 @@
+pluginManagement {
+	repositories {
+		// 阿里云镜像
+		maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+		maven { url 'https://maven.aliyun.com/repository/public' }
+		// 腾讯云镜像
+		maven { url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
+		// 原始Fabric仓库（保留作为备用）
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
+		mavenCentral()
+		gradlePluginPortal()
+	}
+}
