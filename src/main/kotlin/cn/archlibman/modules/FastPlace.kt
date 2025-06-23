@@ -1,40 +1,61 @@
-// FastPlace.kt
 package cn.archlibman.modules
 
 import cn.archlibman.Category
 import cn.archlibman.Module
 import net.minecraft.client.MinecraftClient
+import java.lang.reflect.Field
 
 object FastPlace : Module(
     name = "FastPlace",
     description = "移除放置方块的延迟",
     category = Category.PLAYER
 ) {
-    // 可以添加设置项，比如速度控制
-    // val speed = IntegerSetting("Speed", 0, 0, 4, 1)
+    private var cooldownField: Field? = null
+
+    init {
+        try {
+            // 尝试所有可能的字段名
+            val possibleFieldNames = listOf("itemUseCooldown", "field_1755", "useCooldown")
+            for (fieldName in possibleFieldNames) {
+                try {
+                    cooldownField = MinecraftClient::class.java.getDeclaredField(fieldName)
+                    cooldownField?.isAccessible = true
+                    break
+                } catch (e: NoSuchFieldException) {
+                    continue
+                }
+            }
+
+            if (cooldownField == null) {
+                System.err.println("[FastPlace] 无法找到物品冷却字段！")
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 
     override fun onTick() {
-        if (enabled) {
-            // 1.20.4中需要通过混合访问(mixin)或反射来修改物品使用冷却
-            // 这里提供一个反射实现的方案
+        if (enabled && cooldownField != null) {
             try {
-                val cooldownField = MinecraftClient::class.java.getDeclaredField("itemUseCooldown")
-                cooldownField.isAccessible = true
-                cooldownField.setInt(mc, 0)
+                // 确保在主线程执行
+                if (mc.isOnThread) {
+                    cooldownField?.setInt(mc, 0)
+                }
             } catch (e: Exception) {
-                // 反射失败处理
                 e.printStackTrace()
             }
         }
     }
 
     override fun onDisable() {
-        try {
-            val cooldownField = MinecraftClient::class.java.getDeclaredField("itemUseCooldown")
-            cooldownField.isAccessible = true
-            cooldownField.setInt(mc, 4) // 恢复默认冷却
-        } catch (e: Exception) {
-            e.printStackTrace()
+        if (cooldownField != null) {
+            try {
+                if (mc.isOnThread) {
+                    cooldownField?.setInt(mc, 4) // 恢复默认冷却
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
     }
 }
