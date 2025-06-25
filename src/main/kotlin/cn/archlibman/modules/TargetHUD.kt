@@ -4,10 +4,15 @@ import cn.archlibman.Category
 import cn.archlibman.Module
 import cn.archlibman.event.events.DrawEvent
 import net.minecraft.client.MinecraftClient
+import net.minecraft.client.gui.DrawContext
+import net.minecraft.client.render.*
+import net.minecraft.client.util.math.MatrixStack
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.text.Text
+import net.minecraft.util.math.RotationAxis
 import org.lwjgl.glfw.GLFW
+import kotlin.math.max
 
 object TargetHUD : Module("TargetHUD", "Displays targeted entity info", Category.RENDER) {
     init {
@@ -24,6 +29,15 @@ object TargetHUD : Module("TargetHUD", "Displays targeted entity info", Category
 
         var x = mc.window.scaledWidth / 2 + 10
         var y = mc.window.scaledHeight / 2 - 20
+
+        // Draw entity preview (50x50 pixels)
+        val previewSize = 50
+        val previewX = x
+        val previewY = y
+
+        drawEntityPreview(event.context, target, previewX, previewY, previewSize)
+
+        x += previewSize + 10 // Move text to the right of the preview
 
         val name = target.displayName?.string
         val health = target.health
@@ -82,5 +96,46 @@ object TargetHUD : Module("TargetHUD", "Displays targeted entity info", Category
                 }
             }
         }
+    }
+
+    private fun drawEntityPreview(context: DrawContext, entity: LivingEntity, x: Int, y: Int, size: Int) {
+        val mc = MinecraftClient.getInstance()
+        val matrices = context.matrices
+
+        // Setup rendering
+        matrices.push()
+        matrices.translate(x.toFloat(), y.toFloat(), 1000.0f)
+        matrices.scale(size.toFloat(), size.toFloat(), -size.toFloat())
+
+        // Calculate rotation based on entity type and tick count
+        val rotation = (mc.player?.age ?: 0) % 360
+        val scale = max(entity.width, entity.height) * 1.5f
+
+        matrices.translate(0.5f, 0.5f, 0.5f)
+        matrices.scale(1.0f / scale, 1.0f / scale, 1.0f / scale)
+        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180f))
+        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(rotation.toFloat()))
+
+        // Setup lighting
+        val light = 0xF000F0
+
+        // Get the vertex consumer provider
+        val vertexConsumers = context.vertexConsumers
+
+        // Render entity
+        mc.entityRenderDispatcher.render(
+            entity,
+            0.0, 0.0, 0.0,
+            0f,
+            1f,
+            matrices,
+            vertexConsumers,
+            light
+        )
+
+        matrices.pop()
+
+        // Draw background/border
+        context.fill(x - 1, y - 1, x + size + 1, y + size + 1, 0x80000000.toInt())
     }
 }
