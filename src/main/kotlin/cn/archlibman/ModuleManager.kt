@@ -13,13 +13,13 @@ object ModuleManager {
         addModule(ClickGui)
         addModule(ArrayList)
         addModule(NoClickDelay)
-        // 添加新模块
         addModule(ArmorHUD)
         addModule(PotionHUD)
         addModule(KeyStrokes)
         addModule(TargetHUD)
         addModule(FPSDisplay)
         addModule(NoHurtCam)
+        addModule(NoMiningWhileDrinking)
     }
 
     fun addModule(module: Module) {
