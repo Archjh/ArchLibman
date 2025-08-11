@@ -11,9 +11,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(InGameHud.class)
 public class InGameHUDDraw {
-
-    @Inject(method = "render",at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;enableBlend()V",ordinal = 3))
+    // 修改注入点为更稳定的位置
+    @Inject(method = "render", at = @At("HEAD"))
     public void onRender(DrawContext context, float tickDelta, CallbackInfo ci) {
-        EventBus.INSTANCE.post(new DrawEvent(context,tickDelta));
+        EventBus.INSTANCE.post(new DrawEvent(context, tickDelta));
     }
 }

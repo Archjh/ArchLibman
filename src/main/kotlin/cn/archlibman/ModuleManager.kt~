@@ -8,6 +8,7 @@ import java.util.concurrent.CopyOnWriteArrayList
 object ModuleManager {
     var modules = CopyOnWriteArrayList<Module>()
 
+    // 在 init 块中添加新模块
     init {
         addModule(Sprint)
         addModule(Watermark)
@@ -22,8 +23,8 @@ object ModuleManager {
         addModule(NoHurtCam)
         addModule(NoMiningWhileDrinking)
         addModule(ToggleNotifications)
-        addModule(ChatUI.apply { defaultEnabled = true }) // Set as default enabled
-        addModule(CommandManager.apply { defaultEnabled = true }) // Set as default enabled
+        addModule(ChatUI) // 添加聊天美化模块
+        addModule(CommandManager) // 添加命令管理器模块
     }
 
     fun addModule(module: Module) {
@@ -56,10 +57,6 @@ object ModuleManager {
                 get() = module.enabled
                 set(value) { module.enabled = value }
 
-            override var defaultEnabled: Boolean
-                get() = module.defaultEnabled
-                set(value) { module.defaultEnabled = value }
-
             override val settings get() = module.settings
             override var key: Int
                 get() = module.key
@@ -70,10 +67,5 @@ object ModuleManager {
         }
 
         modules.add(wrappedModule)
-        
-        // Enable the module if it's marked as default enabled
-        if (wrappedModule.defaultEnabled) {
-            wrappedModule.enable()
-        }
     }
 }

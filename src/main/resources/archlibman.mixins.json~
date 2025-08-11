@@ -6,8 +6,7 @@
     "MixinPlayerEntity",
     "TickMixin",
     "MixinGameRenderer",
-    "MouseMixin",
-    "ChatInputMixin"
+    "MouseMixin"
   ],
   "injectors": {
     "defaultRequire": 1

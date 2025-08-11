@@ -1,0 +1,101 @@
+package cn.archlibman.modules
+
+import cn.archlibman.Module
+import cn.archlibman.Category
+import cn.archlibman.event.events.DrawEvent
+import net.minecraft.client.MinecraftClient
+import net.minecraft.client.gui.DrawContext
+import net.minecraft.client.gui.screen.ChatScreen
+import net.minecraft.client.gui.widget.TextFieldWidget
+import net.minecraft.text.Text
+import java.awt.Color
+
+object ChatUI : Module("ChatUI", "Beautiful chat interface", Category.CLIENT) {
+    private val backgroundColor = Color(30, 30, 30, 200)
+    private val borderColor = Color(60, 60, 60, 255)
+    private val commandPrefixColor = Color(100, 149, 237)
+    
+    // 添加边距和最大宽度限制
+    private const val MARGIN = 10
+    private const val MAX_NAME_TAG_WIDTH = 150 // 最大名称标签宽度
+    
+    override fun onDraw(event: DrawEvent) {
+        val mc = MinecraftClient.getInstance()
+        if (mc.currentScreen is ChatScreen) {
+            drawChatBackground(event.context, mc.currentScreen as ChatScreen)
+            drawCommandPrefix(event.context, mc.currentScreen as ChatScreen)
+        }
+    }
+    
+    private fun drawChatBackground(context: DrawContext, screen: ChatScreen) {
+        val width = screen.width
+        val height = screen.height
+        val chatHeight = 20
+        // 限制聊天框宽度为屏幕宽度减去边距
+        val chatWidth = (width - 2 * MARGIN).coerceAtMost(400) // 最大400像素宽
+        val x = MARGIN
+        val y = height - chatHeight - MARGIN
+        
+        // 背景
+        context.fill(x, y, x + chatWidth, y + chatHeight, backgroundColor.rgb)
+        
+        // 边框
+        context.fill(x, y, x + chatWidth, y + 1, borderColor.rgb) // 上
+        context.fill(x, y + chatHeight - 1, x + chatWidth, y + chatHeight, borderColor.rgb) // 下
+        context.fill(x, y, x + 1, y + chatHeight, borderColor.rgb) // 左
+        context.fill(x + chatWidth - 1, y, x + chatWidth, y + chatHeight, borderColor.rgb) // 右
+    }
+    
+    private fun drawCommandPrefix(context: DrawContext, screen: ChatScreen) {
+        val chatField = try {
+            val field = ChatScreen::class.java.getDeclaredField("chatField")
+            field.isAccessible = true
+            field.get(screen) as TextFieldWidget
+        } catch (e: Exception) {
+            return
+        }
+        
+        if (chatField.text.startsWith("/")) {
+            val mc = MinecraftClient.getInstance()
+            val playerName = mc.player?.name?.string ?: "Player"
+            
+            val width = screen.width
+            val height = screen.height
+            val chatHeight = 20
+            val y = height - chatHeight - MARGIN
+            
+            // 计算名称标签宽度，不超过最大值
+            val nameTagWidth = mc.textRenderer.getWidth(playerName).coerceAtMost(MAX_NAME_TAG_WIDTH) + 10
+            val nameTagX = MARGIN - nameTagWidth - 5
+            
+            // 名称标签背景
+            context.fill(nameTagX, y, nameTagX + nameTagWidth, y + chatHeight, Color(30, 144, 255).rgb)
+            
+            // 名称标签边框
+            context.fill(nameTagX, y, nameTagX + nameTagWidth, y + 1, Color(70, 130, 180).rgb)
+            context.fill(nameTagX, y + chatHeight - 1, nameTagX + nameTagWidth, y + chatHeight, Color(70, 130, 180).rgb)
+            context.fill(nameTagX, y, nameTagX + 1, y + chatHeight, Color(70, 130, 180).rgb)
+            context.fill(nameTagX + nameTagWidth - 1, y, nameTagX + nameTagWidth, y + chatHeight, Color(70, 130, 180).rgb)
+            
+            // 玩家名称（如果太长则截断）
+            val displayName = if (mc.textRenderer.getWidth(playerName) > MAX_NAME_TAG_WIDTH) {
+                mc.textRenderer.trimToWidth(playerName, MAX_NAME_TAG_WIDTH - 5)
+            } else {
+                playerName
+            }
+            context.drawText(mc.textRenderer, Text.literal(displayName), nameTagX + 5, y + 6, Color.WHITE.rgb, false)
+            
+            // 命令前缀箭头
+            val arrowX = nameTagX + nameTagWidth
+            for (i in 0 until chatHeight) {
+                val progress = i.toFloat() / chatHeight
+                val startX = arrowX
+                val endX = arrowX + (5 * (1 - 2 * Math.abs(progress - 0.5)))
+                context.fill(startX.toInt(), y + i, endX.toInt(), y + i + 1, Color(30, 144, 255).rgb)
+            }
+            
+            // 命令前缀高亮
+            context.drawText(mc.textRenderer, Text.literal("/"), MARGIN, y + 6, commandPrefixColor.rgb, false)
+        }
+    }
+}

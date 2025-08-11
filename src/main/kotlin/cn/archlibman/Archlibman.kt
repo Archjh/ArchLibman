@@ -1,18 +1,25 @@
 package cn.archlibman
 
 import cn.archlibman.event.EventManager
-import cn.archlibman.gui.ClickGui // 确保导入的是你的 GUI 类
+import cn.archlibman.gui.ClickGui
+import cn.archlibman.modules.ChatUI
+import cn.archlibman.modules.CommandManager
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 
 object Archlibman : ModInitializer {
-	private val logger = LoggerFactory.getLogger("archlibman")
-	lateinit var clickGui: ClickGui // 确保类型正确
+    private val logger = LoggerFactory.getLogger("archlibman")
+    lateinit var clickGui: ClickGui
 
-	override fun onInitialize() {
-		logger.info("ArchLibman Initializing...")
-		EventManager.init()
-		ModuleManager
-		clickGui = ClickGui() // 初始化 GUI
-	}
+    override fun onInitialize() {
+        logger.info("ArchLibman Initializing...")
+        EventManager.init()
+        ModuleManager
+        
+        // Ensure these modules are enabled
+        ModuleManager.modules.find { it.name == "ChatUI" }?.enable()
+        ModuleManager.modules.find { it.name == "CommandManager" }?.enable()
+        
+        clickGui = ClickGui()
+    }
 }
