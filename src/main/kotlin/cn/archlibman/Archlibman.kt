@@ -19,6 +19,7 @@ object Archlibman : ModInitializer {
         // Ensure these modules are enabled
         ModuleManager.modules.find { it.name == "ChatUI" }?.enable()
         ModuleManager.modules.find { it.name == "CommandManager" }?.enable()
+	    ModuleManager.modules.find { it.name == "ToggleNotifications" }?.enable()
         
         clickGui = ClickGui()
     }
