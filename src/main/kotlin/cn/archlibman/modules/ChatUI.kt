@@ -3,6 +3,7 @@ package cn.archlibman.modules
 import cn.archlibman.Module
 import cn.archlibman.Category
 import cn.archlibman.event.events.DrawEvent
+import cn.archlibman.api.ChatInputAccessor
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.DrawContext
 import net.minecraft.client.gui.screen.ChatScreen
@@ -38,14 +39,21 @@ object ChatUI : Module("ChatUI", "Beautiful chat interface", Category.CLIENT) {
     }
     
     private fun updateCurrentInput(screen: ChatScreen) {
-        val chatField = try {
-            val field = ChatScreen::class.java.getDeclaredField("chatField")
-            field.isAccessible = true
-            field.get(screen) as TextFieldWidget
+        try {
+            val accessor = screen as ChatInputAccessor
+            currentInput = accessor.chatField.text
         } catch (e: Exception) {
-            return
+            // 回退方案
+            currentInput = ""
         }
-        currentInput = chatField.text
+    }
+
+    private fun getChatField(screen: ChatScreen): TextFieldWidget? {
+        return try {
+            (screen as ChatInputAccessor).chatField
+        } catch (e: Exception) {
+            null
+        }
     }
     
     private fun drawChatBackground(context: DrawContext, screen: ChatScreen) {
@@ -117,13 +125,11 @@ object ChatUI : Module("ChatUI", "Beautiful chat interface", Category.CLIENT) {
     
     private fun drawCommandPrefix(context: DrawContext, screen: ChatScreen) {
         val chatField = try {
-            val field = ChatScreen::class.java.getDeclaredField("chatField")
-            field.isAccessible = true
-            field.get(screen) as TextFieldWidget
+            (screen as ChatInputAccessor).chatField
         } catch (e: Exception) {
             return
         }
-        
+    
         if (chatField.text.startsWith("/")) {
             val height = screen.height
             // Highlight command prefix
