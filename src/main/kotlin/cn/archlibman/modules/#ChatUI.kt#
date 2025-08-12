@@ -70,50 +70,50 @@ object ChatUI : Module("ChatUI", "Beautiful chat interface", Category.CLIENT) {
     }
     
     private fun drawUserPrompt(context: DrawContext, screen: ChatScreen) {
-        val mc = MinecraftClient.getInstance()
-        val playerName = mc.player?.name?.string ?: "Player"
-        val width = screen.width
-        val height = screen.height
+    val mc = MinecraftClient.getInstance()
+    val playerName = mc.player?.name?.string ?: "Player"
+    val width = screen.width
+    val height = screen.height
     
-        // Calculate tag position (above chat input)
-        val tagY = height - CHAT_HEIGHT - TAG_HEIGHT - MARGIN + 2
-        val tagWidth = mc.textRenderer.getWidth(playerName) + 10
-        val tagX = MARGIN.coerceAtLeast(0)
+    // Calculate tag position (above chat input)
+    val tagY = height - CHAT_HEIGHT - TAG_HEIGHT - MARGIN + 2
+    val tagWidth = mc.textRenderer.getWidth(playerName) + 10
+    val tagX = MARGIN.coerceAtLeast(0)
     
-        // Draw tag with rounded corners
-        drawRoundedRect(context, tagX, tagY, tagWidth, TAG_HEIGHT, CORNER_RADIUS, tagColor)
+    // Draw tag with rounded corners
+    drawRoundedRect(context, tagX, tagY, tagWidth, TAG_HEIGHT, CORNER_RADIUS, tagColor)
     
-        // Draw connecting corner
-        context.fill(tagX + CORNER_RADIUS, tagY + TAG_HEIGHT, 
-                     tagX + tagWidth - CORNER_RADIUS, tagY + TAG_HEIGHT + 2, 
-                     tagColor.rgb)
-        context.fill(tagX + tagWidth - CORNER_RADIUS, tagY + TAG_HEIGHT, 
-                     tagX + tagWidth, tagY + TAG_HEIGHT + CORNER_RADIUS, 
-                     tagColor.rgb)
-       
-        // Draw player name
-        context.drawText(mc.textRenderer, Text.literal(playerName), 
-                        tagX + 5, tagY + 4, Color.WHITE.rgb, false)
+    // Draw connecting corner
+    context.fill(tagX + CORNER_RADIUS, tagY + TAG_HEIGHT, 
+                 tagX + tagWidth - CORNER_RADIUS, tagY + TAG_HEIGHT + 2, 
+                 tagColor.rgb)
+    context.fill(tagX + tagWidth - CORNER_RADIUS, tagY + TAG_HEIGHT, 
+                 tagX + tagWidth, tagY + TAG_HEIGHT + CORNER_RADIUS, 
+                 tagColor.rgb)
     
-        // Draw prompt and input
-        val promptX = tagX + tagWidth + 5
-        val promptText = "╭─"
-        val inputText = if (currentInput.isNotEmpty()) currentInput else "·······································································"
+    // Draw player name
+    context.drawText(mc.textRenderer, Text.literal(playerName), 
+                    tagX + 5, tagY + 4, Color.WHITE.rgb, false)
     
-        context.drawText(mc.textRenderer, Text.literal(promptText), 
-                        promptX, tagY + 4, promptColor.rgb, false)
+    // Draw prompt and input
+    val promptX = tagX + tagWidth + 5
+    val promptText = "╭─"
+    val inputText = if (currentInput.isNotEmpty()) currentInput else "·······································································"
     
-        // Draw input text with ellipsis if too long
-        val maxInputWidth = (width - MARGIN) - (promptX + mc.textRenderer.getWidth(promptText)) - 10
-        val renderedInput = if (mc.textRenderer.getWidth(inputText) > maxInputWidth) {
-            mc.textRenderer.trimToWidth(inputText, maxInputWidth - mc.textRenderer.getWidth("...")) + "..."
-        } else {
-            inputText
-        }
+    context.drawText(mc.textRenderer, Text.literal(promptText), 
+                    promptX, tagY + 4, promptColor.rgb, false)
     
-        context.drawText(mc.textRenderer, Text.literal(renderedInput), 
-                        promptX + mc.textRenderer.getWidth(promptText), tagY + 4, Color.WHITE.rgb, false)
+    // Draw input text with ellipsis if too long
+    val maxInputWidth = (width - MARGIN) - (promptX + mc.textRenderer.getWidth(promptText)) - 10
+    val renderedInput = if (mc.textRenderer.getWidth(inputText) > maxInputWidth) {
+        mc.textRenderer.trimToWidth(inputText, maxInputWidth - mc.textRenderer.getWidth("...")) + "..."
+    } else {
+        inputText
     }
+    
+    context.drawText(mc.textRenderer, Text.literal(renderedInput), 
+                    promptX + mc.textRenderer.getWidth(promptText), tagY + 4, Color.WHITE.rgb, false)
+}
     
     private fun drawCommandPrefix(context: DrawContext, screen: ChatScreen) {
         val chatField = try {
