@@ -23,7 +23,6 @@ object ModuleManager {
         addModule(NoMiningWhileDrinking)
         addModule(ToggleNotifications)
         addModule(ChatUI.apply { defaultEnabled = true }) // Set as default enabled
-        addModule(CommandManager.apply { defaultEnabled = true }) // Set as default enabled
     }
 
     fun addModule(module: Module) {

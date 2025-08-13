@@ -1,9 +1,9 @@
 package cn.archlibman
 
+import cn.archlibman.command.CommandModuleManager
 import cn.archlibman.event.EventManager
 import cn.archlibman.gui.ClickGui
 import cn.archlibman.modules.ChatUI
-import cn.archlibman.modules.CommandManager
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 
@@ -18,9 +18,9 @@ object Archlibman : ModInitializer {
         
         // Ensure these modules are enabled
         ModuleManager.modules.find { it.name == "ChatUI" }?.enable()
-        ModuleManager.modules.find { it.name == "CommandManager" }?.enable()
-	    ModuleManager.modules.find { it.name == "ToggleNotifications" }?.enable()
+        ModuleManager.modules.find { it.name == "ToggleNotifications" }?.enable()
         
         clickGui = ClickGui()
+        CommandModuleManager.register()
     }
 }
